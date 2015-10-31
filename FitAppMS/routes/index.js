@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/auth', function(req, res, next) {
-  var oauth2 = new OAuth.OAuth2(
+  oauth2 = new OAuth.OAuth2(
       "0000000048174F9E",
       "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
       "https://login.live.com/oauth20_authorize.srf",
@@ -31,14 +31,6 @@ router.get('/auth', function(req, res, next) {
     console.log(authorization_uri);
 
     res.redirect(authorization_uri);
-  //oauth2.getOAuthAccessToken(
-  //    req.query.code,
-  //    {
-  //      //"grant_type": 'authorization_code'
-  //    },
-  //  function(e, access_token, refresh_token, results) {
-  //    console.log(access_token);
-  //  });
 });
 
 
