@@ -23,10 +23,6 @@ router.get('/bootstrap-grid', function(req, res, next) {
   res.render('bootstrap-grid');
 
 });
-router.get('/charts', function(req, res, next) {
-  res.render('charts');
-
-});
 router.get('/index-rtl', function(req, res, next) {
   res.render('index-rtl');
 
