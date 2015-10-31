@@ -1,18 +1,37 @@
 var express = require('express');
 var OAuth = require('oauth');
+var url = require('url');
 var router = express.Router();
 
 var authorization_uri;
 var oauth2;
+var queryCode;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+    var url_parts = url.parse(req.url, true);
+    queryCode = url_parts.query.code;
+    console.log(queryCode);
+    if(queryCode != null) {
+        oauth2.getOAuthAccessToken(
+            queryCode,
+            {
+                client_id: '0000000048174F9E',
+                redirect_uri: "http://localhost:3000/",
+                client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
+                code: queryCode,
+                grant_type: 'authorization_code'
+            },
+            function(e, access_token, refresh_token, results) {
+                console.log(access_token);
+            });
+    }
 
 });
 
 router.get('/auth', function(req, res, next) {
-  var oauth2 = new OAuth.OAuth2(
+  oauth2 = new OAuth.OAuth2(
       "0000000048174F9E",
       "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
       "https://login.live.com/oauth20_authorize.srf",
@@ -31,16 +50,29 @@ router.get('/auth', function(req, res, next) {
     console.log(authorization_uri);
 
     res.redirect(authorization_uri);
-  //oauth2.getOAuthAccessToken(
-  //    req.query.code,
-  //    {
-  //      //"grant_type": 'authorization_code'
-  //    },
-  //  function(e, access_token, refresh_token, results) {
-  //    console.log(access_token);
-  //  });
+
+
+
 });
 
+router.get('/callback', function(req, res, next) {
+    //var code = req.query.code;
+    //oauth2.getOAuthAccessToken(
+    //    code,
+    //    {
+    //        client_id: '0000000048174F9E',
+    //        redirect_uri: "http://localhost:3000/access",
+    //        client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
+    //        code: code,
+    //        grant_type: 'authorization_code'
+    //    },
+    //    function(e, access_token, refresh_token, results) {
+    //        console.log(access_token);
+    //    });
+});
 
+router.get('/access', function(req, res, next) {
+    console.log("test access");
+});
 
 module.exports = router;
