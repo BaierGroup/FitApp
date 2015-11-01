@@ -61,7 +61,7 @@
                 </div>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= username%><b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%= username%><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw "></i> Profile</a>
@@ -85,20 +85,19 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Activities<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a class="page-scroll" href="#heart">Sleep Hours</a>
+                                <a class="page-scroll" href="#sleep">Sleep Hours</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="#heart">Running</a>
+                                <a class="page-scroll" href="#calorie">Calorie</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="#heart">Calorie</a>
+                                <a class="page-scroll" href="#distance">Distance</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#steps">Steps</a>
                             </li>
                         </ul>
                     </li>
-
-                    <!--<li>-->
-                        <!--<a href="blank-page"><i class="fa fa-fw fa-file"></i> Blank Page</a>-->
-                    <!--</li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -108,12 +107,13 @@
             <div class="container-fluid">
 
                 <!-- /.row -->
-                <section id="heart">
+                <section id="sleep">
+                  <br><br><br><br>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Steps</h3>
+                                    <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Sleep Hours</h3>
                                 </div>
                                 <div class="panel-body">
                                     <div class="flot-chart">
@@ -126,25 +126,12 @@
                 </section>
                 <!-- /.row -->
                 <div class="row">
-                    <section id="kidney">
-                        <div class="col-lg-4">
-                            <div class="panel panel-green">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Pie Chart Example with Tooltips</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="flot-chart">
-                                        <div class="flot-chart-content" id="flot-pie-chart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="running">
-                        <div class="col-lg-8">
+                    <section id="calorie">
+                      <br><br><br><br>
+                        <div class="col-lg-12">
                             <div class="panel panel-yellow">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Multiple Axes Line Graph Example with Tooltips and Raw Data</h3>
+                                    <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Calorie</h3>
                                 </div>
                                 <div class="panel-body">
                                     <div class="flot-chart">
@@ -158,8 +145,9 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <section id="biking">
-                        <div class="col-lg-6">
+                    <section id="distance">
+                      <br><br><br><br>
+                        <div class="col-lg-12">
                             <div class="panel panel-red">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Distance</h3>
@@ -172,8 +160,11 @@
                             </div>
                         </div>
                     </section>
-                    <seciton id="jogging">
-                        <div class="col-lg-6">
+                </div>
+                <div class="row">
+                    <seciton id="steps">
+                      <br><br><br><br>
+                        <div class="col-lg-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Steps</h3>
@@ -187,64 +178,7 @@
                         </div>
                         </seciton>
                 </div>
-                <!-- /.row -->
 
-                <!-- Morris Charts -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">Morris Charts</h2>
-                        <p class="lead">Morris.js is a very simple API for drawing line, bar, area and donut charts. For full usage instructions and documentation for Morris.js charts, visit <a href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>.</p>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Donut Chart Example</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Line Graph Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-line-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph Example</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
@@ -254,11 +188,12 @@
 
     </div>
     <!-- /#wrapper -->
+    <div hidden>
     <h5 id="hSleep"><%= sleep%></h5>
     <h5 id="hSteps"><%= steps%></h5>
     <h5 id="hDistance"><%= distance%></h5>
     <h5 id="hCalories"><%= calories%></h5>
-
+  </div>
     <!-- jQuery -->
     <script src="/stylesheets/js/jquery.js"></script>
 
