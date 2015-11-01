@@ -78,7 +78,7 @@ router.get('/home', function(req, res, next) {
             function(e, access_token, refresh_token, results) {
                 accessToken = access_token;
                   // console.log(request_arr[i]);
-                  oauth2.get('https://api.microsofthealth.net/v1/me/Profile', accessToken, function (e, result, response) {
+                  oauth2.get('https://api.microsofthealth.net/v1/me/Summaries/Daily?startTime=2015-10-30T16:04:49.8578590-07:00&endTime=2015-11-01T16:04:49.840-07:00', accessToken, function (e, result, response) {
                       var tmp_data = JSON.parse(result);
                       console.log(tmp_data);
                       res.render('index1',tmp_data);
