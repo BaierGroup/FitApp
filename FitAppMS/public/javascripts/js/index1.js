@@ -1,9 +1,46 @@
 
 $(document).ready(function() {
-  drawChart();
-  alert("her");
+  var text = $("#header5").text();
+    var results = [];
+    var data = [];
+    results = text.split(",");
+    alert(results);
+    console.log("results: " + text);
+    for(var i = results.length-1; i >= 0; i--) {
+        data.push([new Date(results[i-1]).getTime(), results[i]]);
+        i--;
+    }
+
+    var barOptions = {
+        series: {
+            bars: {
+                show: true,
+                barWidth: 43200000
+            }
+        },
+        xaxis: {
+            mode: "time",
+            timeformat: "%m/%d",
+            minTickSize: [1, "day"]
+        },
+        grid: {
+            hoverable: true
+        },
+        legend: {
+            show: false
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "Date: %x, Minutes: %y"
+        }
+    };
+    var barData = {
+        label: "bar",
+        data: data
+    };
+    $.plot($("#flot-bar-chart"), [barData], barOptions);
 });
-google.load('visualization', '1', {'packages':['corechart']});
+//google.load('visualization', '1', {'packages':['corechart']});
 
 // Set a callback to run when the Google Visualization API is loaded.
 // google.setOnLoadCallback(drawChart);

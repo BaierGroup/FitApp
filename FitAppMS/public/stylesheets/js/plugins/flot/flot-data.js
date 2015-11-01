@@ -1204,7 +1204,11 @@ $(function() {
 // Flot Chart Bar Graph
 
 $(function() {
+    var data = $("#header5").text();
+    var dateData = [];
+    dateData = data.split(",");
 
+    console.log("date data: " + dateData);
     var barOptions = {
         series: {
             bars: {
@@ -1225,7 +1229,7 @@ $(function() {
         },
         tooltip: true,
         tooltipOpts: {
-            content: "x: %x, y: %y"
+            content: "Date: %x, Hours: %y"
         }
     };
     var barData = {
