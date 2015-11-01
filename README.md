@@ -20,5 +20,6 @@ How to run a sample:
 
 1. Open the FitAppMS on the terminal;
 2. Use the command: npm start app.js;
+3. Open web brower and type in "http://localhost:3000"
 
 
