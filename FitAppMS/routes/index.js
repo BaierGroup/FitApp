@@ -13,27 +13,12 @@ var oauth2 = new OAuth.OAuth2(
     null
 );
 var queryCode;
+var accessToken;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-    var url_parts = url.parse(req.url, true);
-    queryCode = url_parts.query.code;
-    // console.log(queryCode);
-    if(queryCode != null) {
-        oauth2.getOAuthAccessToken(
-            queryCode,
-            {
-                client_id: '0000000048174F9E',
-                redirect_uri: "http://localhost:3000/",
-                client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
-                code: queryCode,
-                grant_type: 'authorization_code'
-            },
-            function(e, access_token, refresh_token, results) {
-                console.log('access_token:  '+ access_token);
-            });
-    }
+
 
 });
 
@@ -59,21 +44,14 @@ router.get('/index', function(req, res, next) {
 });
 
 router.get('/auth', function(req, res, next) {
-  // oauth2 = new OAuth.OAuth2(
-  //     "0000000048174F9E",
-  //     "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
-  //     "https://login.live.com/oauth20_authorize.srf",
-  //     "",
-  //     "",
-  //     null
-  // );
+
     console.log('authr');
 
    authorization_uri = oauth2.getAuthorizeUrl({
        client_id: '0000000048174F9E',
        scope: 'mshealth.ReadDevices',
        response_type: 'code',
-       redirect_uri: 'http://localhost:3000/'
+       redirect_uri: 'http://localhost:3000/home'
     });
     console.log(authorization_uri);
 
@@ -83,20 +61,27 @@ router.get('/auth', function(req, res, next) {
 
 });
 
-router.get('/callback', function(req, res, next) {
-    //var code = req.query.code;
-    //oauth2.getOAuthAccessToken(
-    //    code,
-    //    {
-    //        client_id: '0000000048174F9E',
-    //        redirect_uri: "http://localhost:3000/access",
-    //        client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
-    //        code: code,
-    //        grant_type: 'authorization_code'
-    //    },
-    //    function(e, access_token, refresh_token, results) {
-    //        console.log(access_token);
-    //    });
+router.get('/home', function(req, res, next) {
+    var url_parts = url.parse(req.url, true);
+    queryCode = url_parts.query.code;
+    // console.log(queryCode);
+    if(queryCode != null) {
+        oauth2.getOAuthAccessToken(
+            queryCode,
+            {
+                client_id: '0000000048174F9E',
+                redirect_uri: "http://localhost:3000/home",
+                client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
+                code: queryCode,
+                grant_type: 'authorization_code'
+            },
+            function(e, access_token, refresh_token, results) {
+                accessToken = access_token;
+                console.log('access_token:  '+ access_token);
+            });
+    }
+    res.render('index1');
+
 });
 
 router.get('/access', function(req, res, next) {
