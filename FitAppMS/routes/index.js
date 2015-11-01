@@ -240,8 +240,8 @@ router.get('/mspersoninfo', function(req, res, next) {
                 username: tmp_data.firstName,
                 fullname: tmp_data.firstName + " " + tmp_data.lastName,
                 gender: tmp_data.gender,
-                height: tmp_data.height,
-                weight: tmp_data.weight,
+                height: (tmp_data.height/10),
+                weight: (tmp_data.weight/1000),
                 birthdate: tmp_data.birthdate
             });
     });
