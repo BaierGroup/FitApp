@@ -161,16 +161,37 @@ router.get('/fitbithome', function(req, res, next) {
                             oauth1.get('https://api.fitbit.com/1/user/-/activities/distance/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
                                 function(e, data, response) {
                                     var result = JSON.parse(data);
-                                    console.log(result);
                                     for(var i = result["activities-distance"].length-1; i>=0; i--) {
                                         distance.push(result["activities-distance"][i].dateTime);
                                         distance.push(result["activities-distance"][i].value);
                                     }
+
+
                                     oauth1.get('https://api.fitbit.com/1/user/-/profile.json', oauthAccessToken, oauthAccessTokenSecret,
                                         function(e, data, response) {
                                             var result = JSON.parse(data);
+                                            var name = result.user.displayName;
                                             console.log("username: " + result.user.displayName)
-                                            res.render('flotcharts', {sleep: sleep, steps: steps, distance: distance, username: result.user.displayName});
+
+                                            var calories = [];
+                                            oauth1.get('https://api.fitbit.com/1/user/-/activities/calories/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
+                                                function(e, data, response) {
+                                                    var result = JSON.parse(data);
+
+                                                    for(var i = result["activities-calories"].length-1; i>=0; i--) {
+                                                        calories.push(result["activities-calories"][i].dateTime);
+                                                        calories.push(result["activities-calories"][i].value);
+                                                    }
+                                                    res.render('flotcharts',
+                                                        {
+                                                            sleep: sleep,
+                                                            steps: steps,
+                                                            distance: distance,
+                                                            username: name,
+                                                            calories: calories
+                                                        });
+                                                })
+
                                         }
                                     )
 
