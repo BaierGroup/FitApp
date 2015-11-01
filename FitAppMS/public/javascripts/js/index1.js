@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  var text = $("#header5").text();
+  var text = $("#hSleep").text();
     var results = [];
     var data = [];
     results = text.split(",");
@@ -39,6 +39,45 @@ $(document).ready(function() {
         data: data
     };
     $.plot($("#flot-bar-chart"), [barData], barOptions);
+
+    text = $("#hSteps").text();
+    results = text.split(",");
+    data = [];
+    for(var i = results.length-1; i >= 0; i--) {
+        data.push([new Date(results[i-1]).getTime(), results[i]]);
+        i--;
+    }
+    var options = {
+        series: {
+            lines: {
+                show: true
+            },
+            points: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true //IMPORTANT! this is needed for tooltip to work
+        },
+        xaxis: {
+            mode: "time",
+            timeformat: "%m/%d",
+            minTickSize: [1, "day"]
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "'Date: %x.1, Steps: %y",
+            shifts: {
+                x: -60,
+                y: 25
+            }
+        }
+    };
+    var plotObj = $.plot($("#flot-line-chart"), [{
+            data: data,
+            label: "Steps"
+        }],
+        options);
 });
 
 

@@ -139,16 +139,27 @@ router.get('/fitbithome', function(req, res, next) {
 
                     var profile = JSON.parse(data);
                     console.log(profile);
-                    var results = [];
+                    var sleep = [];
                     if(profile.hasOwnProperty("sleep-minutesAsleep")) {
                         console.log("has this one");
                         for(var i = profile["sleep-minutesAsleep"].length - 1; i >= 0; i--) {
-                            results.push(profile["sleep-minutesAsleep"][i].dateTime);
-                            results.push(profile["sleep-minutesAsleep"][i].value)
+                            sleep.push(profile["sleep-minutesAsleep"][i].dateTime);
+                            sleep.push(profile["sleep-minutesAsleep"][i].value)
                         }
                     }
-                    console.log(results);
-                    res.render('flotcharts', {arrays: results});
+
+                    var steps = [];
+                    oauth1.get('https://api.fitbit.com/1/user/-/activities/steps/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
+                        function(e, data, response) {
+                            var result = JSON.parse(data);
+                            for(var i = result["activities-steps"].length-1; i>=0; i--) {
+                                steps.push(result["activities-steps"][i].dateTime);
+                                steps.push(result["activities-steps"][i].value);
+                            }
+                            res.render('flotcharts', {sleep: sleep, steps: steps});
+                        });
+                    console.log(sleep);
+
                 });
         });
     }
