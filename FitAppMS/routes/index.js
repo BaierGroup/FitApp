@@ -93,7 +93,7 @@ router.get('/msbandhome', function(req, res, next) {
                       console.log(tmp_data);
                       var calorie = tmp_data.summaries[1].caloriesBurnedSummary.totalCalories;
                       console.log(calorie);
-                      res.render('index1',tmp_data);
+                      res.render('charts',tmp_data);
                       // result_arr.push(tmp_data);
                   });
         });
