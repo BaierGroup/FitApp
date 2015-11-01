@@ -107,7 +107,7 @@ $(document).ready(function() {
         },
         tooltip: true,
         tooltipOpts: {
-            content: "'Date: %x.1, Distance: %y",
+            content: "'Date: %x.1, Heart Rates: %y",
             shifts: {
                 x: -60,
                 y: 25
@@ -116,7 +116,7 @@ $(document).ready(function() {
     };
     var plotObj = $.plot($("#flot-moving-line-chart"), [{
             data: data,
-            label: "Distance"
+            label: "Heart Rates"
         }],
         options);
 
