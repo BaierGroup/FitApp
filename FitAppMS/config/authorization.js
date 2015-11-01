@@ -18,5 +18,3 @@ exports.oauth1 = new OAuth.OAuth(
     null,
     null
 );
-
-//module.exports = oauth1;

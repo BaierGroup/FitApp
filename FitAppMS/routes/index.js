@@ -148,7 +148,7 @@ router.get('/fitbithome', function(req, res, next) {
                         }
                     }
                     console.log(results);
-                    res.render('index1', {arrays: results});
+                    res.render('flotcharts', {arrays: results});
                 });
         });
     }

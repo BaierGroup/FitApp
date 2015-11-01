@@ -40,16 +40,7 @@ $(document).ready(function() {
     };
     $.plot($("#flot-bar-chart"), [barData], barOptions);
 });
-//google.load('visualization', '1', {'packages':['corechart']});
 
-// Set a callback to run when the Google Visualization API is loaded.
-// google.setOnLoadCallback(drawChart);
-// function drawChart(arr) {
-//   // drawSleepChart(arr);
-//   // drawStepsChart(arr);
-//   // drawCalorieChart(arr);
-//   drawChart();
-// }
 
 function drawChart() {
 
