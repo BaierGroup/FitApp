@@ -198,20 +198,35 @@ router.get('/fitbithome', function(req, res, next) {
                                 })
 
                         });
-                    console.log(sleep);
 
                 });
         });
     }
 });
 
-router.get('/personal', function(req, res, next) {
+router.get('/personinfo', function(req, res, next) {
+    console.log("access token: " + oauthAccessToken);
     oauth1.get('https://api.fitbit.com/1/user/-/profile.json', oauthAccessToken, oauthAccessTokenSecret,
         function(e, data, response) {
             var result = JSON.parse(data);
             var name = result.user.displayName;
-            console.log("username: " + result.user.displayName)
+            var dateofbirth = result.user.dateOfBirth;
+            var persongender = result.user.gender;
+            var pWeight = result.user.weight;
+            var pHeight = result.user.height;
+            var pFullName = result.user.fullName;
+            console.log("username: " + result)
+            res.render('personinfo',
+                {
+                    username: name,
+                    birthdate: dateofbirth,
+                    gender: persongender,
+                    weight: pWeight,
+                    height: pHeight,
+                    fullname: pFullName
+                });
         });
+
 });
 
 module.exports = router;

@@ -47,7 +47,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index">Portfolio</a>
+            <a class="navbar-brand" href="index">Home</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -70,7 +70,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>John Smith</strong>
+                                    <h5 class="media-heading"><strong><%= username%></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
@@ -85,7 +85,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>John Smith</strong>
+                                    <h5 class="media-heading"><strong><%= username%></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
@@ -100,7 +100,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>John Smith</strong>
+                                    <h5 class="media-heading"><strong><%= username%></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
@@ -113,39 +113,10 @@
                     </li>
                 </ul>
             </li>
+
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                <ul class="dropdown-menu alert-dropdown">
-                    <li>
-                        <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">View All</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%= username%><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                    </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                     </li>
@@ -159,12 +130,6 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <!--<li>-->
-                <!--<a href="bootstrap-elements"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                <!--<a href="bootstrap-grid"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>-->
-                <!--</li>-->
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Sleep<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
@@ -213,7 +178,7 @@
                         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
                         <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
                         <div class="fb-profile-text">
-                            <h1>Liu Ye</h1>
+                            <h1><%= fullname%></h1>
                             <p>CEO of Baier Co.</p>
                         </div>
                     </div>
@@ -230,53 +195,45 @@
                                 <h4 class="panel-title">First Name</h4>
                             </div>
                             <div class="panel-body">
-                                Liu Ye
+                                <%= username%>
                             </div>
                         </div>
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Last Name</h4>
+                                <h4 class="panel-title">Full Name</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body"><%= fullname%>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Birth Date</h4>
+                                <h4 class="panel-title">Date of Birth</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body"><%= birthdate%>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">Gender</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body"><%= gender%>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">Weight</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body"><%= weight%>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">Height</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body"><%= height%>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Last Update Date</h4>
-                            </div>
-                            <div class="panel-body">
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>
