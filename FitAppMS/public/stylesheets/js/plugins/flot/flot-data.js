@@ -163,7 +163,7 @@ $(function() {
 
         while (data.length < maximum) {
             var previous = data.length ? data[data.length - 1] : 50;
-            var y = previous + Math.random() * 10 - 5;
+            var y = 80 + Math.random() * 10 - 5;
             data.push(y < 0 ? 0 : y > 100 ? 100 : y);
         }
 
