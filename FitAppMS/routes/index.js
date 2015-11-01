@@ -133,7 +133,7 @@ router.get('/fitbithome', function(req, res, next) {
             oauthAccessToken = oauth_access_token;
             oauthAccessTokenSecret = oauth_access_token_secret;
 
-            oauth1.get('https://api.fitbit.com/1/user/-/activities/date/2015-10-28.json', oauthAccessToken, oauthAccessTokenSecret,
+            oauth1.get('https://api.fitbit.com/1/user/-/activities/floors/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
                 function(e, data, response) {
                     var profile = JSON.parse(data);
                     console.log(profile);
