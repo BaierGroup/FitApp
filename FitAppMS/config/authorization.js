@@ -13,7 +13,7 @@ exports.oauth1 = new OAuth.OAuth(
     fitbitConsumerKey,
     fitbitConsumerSecret,
     "1.0",
-    "http://localhost:3000/",
+    "http://localhost:3000/fitbithome",
     "HMAC-SHA1",
     null,
     null

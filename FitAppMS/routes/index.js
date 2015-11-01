@@ -69,8 +69,6 @@ router.get('/msband', function(req, res, next) {
 
     res.redirect(authorization_uri);
 
-
-
 });
 
 router.get('/msbandhome', function(req, res, next) {
@@ -142,6 +140,7 @@ router.get('/fitbithome', function(req, res, next) {
                 });
         });
     }
+    res.render('index1');
 });
 
 module.exports = router;
