@@ -81,6 +81,8 @@ router.get('/home', function(req, res, next) {
                   oauth2.get('https://api.microsofthealth.net/v1/me/Summaries/Daily?startTime=2015-10-30T16:04:49.8578590-07:00&endTime=2015-11-01T16:04:49.840-07:00', accessToken, function (e, result, response) {
                       var tmp_data = JSON.parse(result);
                       console.log(tmp_data);
+                      var calorie = tmp_data.summaries[1].caloriesBurnedSummary.totalCalories;
+                      console.log(calorie);
                       res.render('index1',tmp_data);
                       // result_arr.push(tmp_data);
                   });
