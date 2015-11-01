@@ -203,8 +203,15 @@ router.get('/fitbithome', function(req, res, next) {
                 });
         });
     }
-    console.log("results" + results);
-    //res.render('index1', {arrays: results});
+});
+
+router.get('/personal', function(req, res, next) {
+    oauth1.get('https://api.fitbit.com/1/user/-/profile.json', oauthAccessToken, oauthAccessTokenSecret,
+        function(e, data, response) {
+            var result = JSON.parse(data);
+            var name = result.user.displayName;
+            console.log("username: " + result.user.displayName)
+        });
 });
 
 module.exports = router;
