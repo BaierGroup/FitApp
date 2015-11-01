@@ -156,7 +156,24 @@ router.get('/fitbithome', function(req, res, next) {
                                 steps.push(result["activities-steps"][i].dateTime);
                                 steps.push(result["activities-steps"][i].value);
                             }
-                            res.render('flotcharts', {sleep: sleep, steps: steps});
+
+                            var distance = [];
+                            oauth1.get('https://api.fitbit.com/1/user/-/activities/distance/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
+                                function(e, data, response) {
+                                    var result = JSON.parse(data);
+                                    console.log(result);
+                                    for(var i = result["activities-distance"].length-1; i>=0; i--) {
+                                        distance.push(result["activities-distance"][i].dateTime);
+                                        distance.push(result["activities-distance"][i].value);
+                                    }
+                                    oauth1.get('https://api.fitbit.com/1/user/-/profile.json', oauthAccessToken, oauthAccessTokenSecret,
+                                        function(e, data, response) {
+                                            var result = JSON.parse(data);
+                                        }
+                                    )
+                                    res.render('flotcharts', {sleep: sleep, steps: steps, distance: distance});
+                                })
+
                         });
                     console.log(sleep);
 
