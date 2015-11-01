@@ -84,8 +84,23 @@ router.get('/auth', function(req, res, next) {
 });
 
 router.get('/callback', function(req, res, next) {
-
+    //var code = req.query.code;
+    //oauth2.getOAuthAccessToken(
+    //    code,
+    //    {
+    //        client_id: '0000000048174F9E',
+    //        redirect_uri: "http://localhost:3000/access",
+    //        client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
+    //        code: code,
+    //        grant_type: 'authorization_code'
+    //    },
+    //    function(e, access_token, refresh_token, results) {
+    //        console.log(access_token);
+    //    });
 });
 
+router.get('/access', function(req, res, next) {
+    console.log("test access");
+});
 
 module.exports = router;
