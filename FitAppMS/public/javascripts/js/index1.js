@@ -4,7 +4,7 @@ $(document).ready(function() {
     var results = [];
     var data = [];
     results = text.split(",");
-    alert(results);
+    // alert(results);
     console.log("results: " + text);
     for(var i = results.length-1; i >= 0; i--) {
         data.push([new Date(results[i-1]).getTime(), results[i]]);
