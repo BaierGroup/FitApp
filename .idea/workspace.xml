@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c8465ef-b2b6-45d5-ba86-c7d0d5174b8b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FitAppMS/public/images/running.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FitAppMS/views/index4.ejs" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/public/images/img/header-bg.jpg" afterPath="$PROJECT_DIR$/FitAppMS/public/images/img/header-bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/agency.css" afterPath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/agency.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/user.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FitAppMS/views/index1.ejs" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/bootstrap.css" afterPath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/views/index.ejs" afterPath="$PROJECT_DIR$/FitAppMS/views/index.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/views/index1.ejs" afterPath="$PROJECT_DIR$/FitAppMS/views/index1.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/sb-admin.css" afterPath="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/sb-admin.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FitApp.iws" />
@@ -29,23 +28,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FitAppMS/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.882353">
-              <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.40059346">
+              <caret line="220" column="50" selection-start-line="220" selection-start-column="50" selection-end-line="220" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index1.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FitAppMS/views/index1.ejs">
+      <file leaf-file-name="user.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/user.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.076321">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_main.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitAppMS/views/index_main.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.625">
+              <caret line="221" column="48" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -54,8 +61,18 @@
       <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/agency.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.703705">
-              <caret line="70" column="10" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="10" />
+            <state vertical-scroll-proportion="79.51852">
+              <caret line="435" column="5" selection-start-line="435" selection-start-column="1" selection-end-line="435" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.685185">
+              <caret line="5323" column="31" selection-start-line="5323" selection-start-column="31" selection-end-line="5323" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -64,8 +81,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FitAppMS/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9629629">
-              <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+            <state vertical-scroll-proportion="-8.592592">
+              <caret line="75" column="21" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -75,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/sb-admin.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="156" column="7" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="7" />
+              <caret line="26" column="10" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,11 +116,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FitAppMS/views/index1.ejs" />
         <option value="$PROJECT_DIR$/FitAppMS/views/setting.ejs" />
         <option value="$PROJECT_DIR$/FitAppMS/routes/index.js" />
         <option value="$PROJECT_DIR$/FitAppMS/views/index2.ejs" />
         <option value="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/agency.css" />
+        <option value="$PROJECT_DIR$/FitAppMS/views/index1.ejs" />
+        <option value="$PROJECT_DIR$/FitAppMS/views/info.ejs" />
+        <option value="$PROJECT_DIR$/FitAppMS/views/index_main.ejs" />
+        <option value="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/user.css" />
+        <option value="$PROJECT_DIR$/FitAppMS/public/stylesheets/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/FitAppMS/views/index.ejs" />
       </list>
     </option>
@@ -116,10 +138,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="130" />
-    <option name="y" value="91" />
-    <option name="width" value="973" />
-    <option name="height" value="659" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -283,32 +303,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FitApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FitApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FitAppMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -317,7 +311,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -364,14 +358,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="130" y="91" width="973" height="659" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27646455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20859376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -398,9 +392,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -424,9 +416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -438,10 +428,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FitAppMS/views/index_main.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.625">
+          <caret line="221" column="48" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitAppMS/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.592592">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.685185">
+          <caret line="5323" column="31" selection-start-line="5323" selection-start-column="31" selection-end-line="5323" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/agency.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.703705">
-          <caret line="70" column="10" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="10" />
+        <state vertical-scroll-proportion="79.51852">
+          <caret line="435" column="5" selection-start-line="435" selection-start-column="1" selection-end-line="435" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -449,33 +463,23 @@
     <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/sb-admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="7" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="7" />
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitAppMS/public/stylesheets/css/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FitAppMS/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.882353">
-          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FitAppMS/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9629629">
-          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FitAppMS/views/index1.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.076321">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.40059346">
+          <caret line="220" column="50" selection-start-line="220" selection-start-column="50" selection-end-line="220" selection-end-column="50" />
           <folding />
         </state>
       </provider>
