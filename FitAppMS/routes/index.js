@@ -229,4 +229,22 @@ router.get('/personinfo', function(req, res, next) {
 
 });
 
+router.get('/mspersoninfo', function(req, res, next) {
+    oauth2.get('https://api.microsofthealth.net/v1/me/Profile', accessToken, function (e, result, response) {
+        var tmp_data = JSON.parse(result);
+        console.log(tmp_data);
+        //var calorie = tmp_data.summaries[1].caloriesBurnedSummary.totalCalories;
+        //console.log(calorie);
+        res.render('mspersoninfo',
+            {
+                username: tmp_data.firstName,
+                fullname: tmp_data.firstName + " " + tmp_data.lastName,
+                gender: tmp_data.gender,
+                height: tmp_data.height,
+                weight: tmp_data.weight,
+                birthdate: tmp_data.birthdate
+            });
+    });
+});
+
 module.exports = router;
