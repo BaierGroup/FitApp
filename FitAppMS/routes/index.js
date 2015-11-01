@@ -37,6 +37,27 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/blank-page', function(req, res, next) {
+  res.render('blank-page');
+
+});
+router.get('/bootstrap-elements', function(req, res, next) {
+  res.render('bootstrap-elements');
+
+});
+router.get('/bootstrap-grid', function(req, res, next) {
+  res.render('bootstrap-grid');
+
+});
+router.get('/index-rtl', function(req, res, next) {
+  res.render('index-rtl');
+
+});
+router.get('/index', function(req, res, next) {
+  res.render('index');
+
+});
+
 router.get('/auth', function(req, res, next) {
   // oauth2 = new OAuth.OAuth2(
   //     "0000000048174F9E",
