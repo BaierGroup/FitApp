@@ -1,8 +1,11 @@
 var express = require('express');
 var OAuth = require('oauth');
 var url = require('url');
+var authorization = require('../config/authorization');
+
 var router = express.Router();
 
+// OAuth2 for Microsoft Band
 var authorization_uri;
 var oauth2 = new OAuth.OAuth2(
     "0000000048174F9E",
@@ -14,6 +17,15 @@ var oauth2 = new OAuth.OAuth2(
 );
 var queryCode;
 var accessToken;
+
+// OAuth1.0a for Fitbit
+var oauthToken;
+var oauthTokenSecret;
+var verifier;
+var oauthAccessToken;
+var oauthAccessTokenSecret;
+
+var oauth1 = authorization.oauth1;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -43,7 +55,7 @@ router.get('/index', function(req, res, next) {
 
 });
 
-router.get('/auth', function(req, res, next) {
+router.get('/msband', function(req, res, next) {
 
     console.log('authr');
 
@@ -51,7 +63,7 @@ router.get('/auth', function(req, res, next) {
        client_id: '0000000048174F9E',
        scope: 'mshealth.ReadDevices mshealth.ReadProfile mshealth.ReadActivityHistory mshealth.ReadActivityLocation',
        response_type: 'code',
-       redirect_uri: 'http://localhost:3000/home'
+       redirect_uri: 'http://localhost:3000/msbandhome'
     });
     console.log(authorization_uri);
 
@@ -61,16 +73,16 @@ router.get('/auth', function(req, res, next) {
 
 });
 
-router.get('/home', function(req, res, next) {
-    var url_parts = url.parse(req.url, true);
-    queryCode = url_parts.query.code;
+router.get('/msbandhome', function(req, res, next) {
+    var url_parts1 = url.parse(req.url, true);
+    queryCode = url_parts1.query.code;
     // console.log(queryCode);
     if(queryCode != null) {
         oauth2.getOAuthAccessToken(
             queryCode,
             {
                 client_id: '0000000048174F9E',
-                redirect_uri: "http://localhost:3000/home",
+                redirect_uri: "http://localhost:3000/msbandhome",
                 client_secret: "gi6j1N9FcgT3YACQHpUcQE1280rKuu9Y",
                 code: queryCode,
                 grant_type: 'authorization_code'
@@ -93,8 +105,43 @@ router.get('/home', function(req, res, next) {
 
 
 
-router.get('/access', function(req, res, next) {
-    console.log("test access");
+router.get('/fitbit', function(req, res, next) {
+    oauth1.getOAuthRequestToken(
+        "",
+        function (e, oauth_token, oauth_token_secret, results) {
+            oauthToken = oauth_token;
+            oauthTokenSecret = oauth_token_secret;
+            console.log("Oauth Token: "+ oauthToken);
+            console.log("Oauth Secret Token: "+ oauthTokenSecret);
+            navigation();
+
+        }
+    );
+
+    console.log("test speed");
+    var navigation = function() {
+        res.redirect("https://fitbit.com/oauth/authorize?oauth_token=" + oauthToken);
+    };
+});
+
+router.get('/fitbithome', function(req, res, next) {
+    var url_parts = url.parse(req.url, true);
+    verifier = url_parts.query.oauth_verifier;
+    if(verifier != null) {
+        console.log("verifier:" + verifier);
+        oauth1.getOAuthAccessToken(oauthToken, oauthTokenSecret, verifier, function (e, oauth_access_token, oauth_access_token_secret, results ) {
+            console.log("access token: " + oauth_access_token);
+            console.log("access token secret: " + oauth_access_token_secret);
+            oauthAccessToken = oauth_access_token;
+            oauthAccessTokenSecret = oauth_access_token_secret;
+
+            oauth1.get('https://api.fitbit.com/1/user/-/activities/date/2015-10-28.json', oauthAccessToken, oauthAccessTokenSecret,
+                function(e, data, response) {
+                    var profile = JSON.parse(data);
+                    console.log(profile);
+                });
+        });
+    }
 });
 
 module.exports = router;
