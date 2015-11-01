@@ -49,7 +49,7 @@ router.get('/auth', function(req, res, next) {
 
    authorization_uri = oauth2.getAuthorizeUrl({
        client_id: '0000000048174F9E',
-       scope: ['mshealth.ReadDevices', 'mshealth.ReadProfile', 'mshealth.ReadActivityHistory', 'mshealth.ReadActivityLocation'],
+       scope: 'mshealth.ReadDevices mshealth.ReadProfile mshealth.ReadActivityHistory mshealth.ReadActivityLocation',
        response_type: 'code',
        redirect_uri: 'http://localhost:3000/home'
     });
@@ -77,19 +77,19 @@ router.get('/home', function(req, res, next) {
             },
             function(e, access_token, refresh_token, results) {
                 accessToken = access_token;
-                //console.log('access_token:  '+ access_token);
-                oauth2.get('https://api.microsofthealth.net/v1/me/Profile', accessToken, function (e, result, response) {
-                    //var profile = JSON.parse(data);
-                    console.log(result);
-                });
-            });
+                  // console.log(request_arr[i]);
+                  oauth2.get('https://api.microsofthealth.net/v1/me/Profile', accessToken, function (e, result, response) {
+                      var tmp_data = JSON.parse(result);
+                      console.log(tmp_data);
+                      res.render('index1',tmp_data);
+                      // result_arr.push(tmp_data);
+                  });
+        });
+      }
 
-    }
-
-    res.render('index1');
+    });
 
 
-});
 
 router.get('/access', function(req, res, next) {
     console.log("test access");
