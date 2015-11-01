@@ -169,9 +169,11 @@ router.get('/fitbithome', function(req, res, next) {
                                     oauth1.get('https://api.fitbit.com/1/user/-/profile.json', oauthAccessToken, oauthAccessTokenSecret,
                                         function(e, data, response) {
                                             var result = JSON.parse(data);
+                                            console.log("username: " + result.user.displayName)
+                                            res.render('flotcharts', {sleep: sleep, steps: steps, distance: distance, username: result.user.displayName});
                                         }
                                     )
-                                    res.render('flotcharts', {sleep: sleep, steps: steps, distance: distance});
+
                                 })
 
                         });
