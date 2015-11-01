@@ -116,7 +116,6 @@ router.get('/fitbit', function(req, res, next) {
         }
     );
 
-    console.log("test speed");
     var navigation = function() {
         res.redirect("https://fitbit.com/oauth/authorize?oauth_token=" + oauthToken);
     };
@@ -125,6 +124,7 @@ router.get('/fitbit', function(req, res, next) {
 router.get('/fitbithome', function(req, res, next) {
     var url_parts = url.parse(req.url, true);
     verifier = url_parts.query.oauth_verifier;
+    var results = [];
     if(verifier != null) {
         console.log("verifier:" + verifier);
         oauth1.getOAuthAccessToken(oauthToken, oauthTokenSecret, verifier, function (e, oauth_access_token, oauth_access_token_secret, results ) {
@@ -133,14 +133,27 @@ router.get('/fitbithome', function(req, res, next) {
             oauthAccessToken = oauth_access_token;
             oauthAccessTokenSecret = oauth_access_token_secret;
 
-            oauth1.get('https://api.fitbit.com/1/user/-/activities/floors/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
+            oauth1.get('https://api.fitbit.com/1/user/-/sleep/minutesAsleep/date/today/7d.json', oauthAccessToken, oauthAccessTokenSecret,
                 function(e, data, response) {
+                    //JSON.parse(data).toArray()
+
                     var profile = JSON.parse(data);
                     console.log(profile);
+                    var results = [];
+                    if(profile.hasOwnProperty("sleep-minutesAsleep")) {
+                        console.log("has this one");
+                        for(var i = profile["sleep-minutesAsleep"].length - 1; i >= 0; i--) {
+                            results.push(profile["sleep-minutesAsleep"][i].dateTime);
+                            results.push(profile["sleep-minutesAsleep"][i].value)
+                        }
+                    }
+                    console.log(results);
+                    res.render('index1', {arrays: results});
                 });
         });
     }
-    res.render('index1');
+    console.log("results" + results);
+    //res.render('index1', {arrays: results});
 });
 
 module.exports = router;
